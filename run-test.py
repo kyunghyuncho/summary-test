@@ -25,22 +25,23 @@ def main():
 
     indices = numpy.random.permutation(n_lines)
 
-    for ii in indices:
+    for nn, ii in enumerate(indices):
         try:
-            print('Article')
-            print(articles[ii])
+            print('== Article ==')
+            print(articles[ii].strip())
             print('')
 
             sysids = numpy.random.choice(numpy.arange(3), 2, replace=False)
             sysa, sysb = sysids[0], sysids[1]
 
-            print('(a)', systems[sysa][ii])
-            print('(b)', systems[sysb][ii])
+            print('(a)', systems[sysa][ii].strip())
+            print('(b)', systems[sysb][ii].strip())
+            print('')
 
             ans = -1
 
             while True:
-                preferred = input('Which do you prefer? Type a or b: ')
+                preferred = input('Which headline do you prefer? Type a or b: ')
                 preferred = preferred.strip().lower()
 
                 if preferred == 'a':
